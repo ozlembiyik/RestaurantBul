@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Surjith S M">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+
+    <script src="~/Content/tempp/listeddd/cdn-cgi/apps/head/-mEFVS8y7qx5pVzWHQTCQu5gnVM.js"></script>
+    <link rel="shortcut icon" href="#">
+    <title>Restaurant Bul.</title>
+    <link href="~/Content/tempp/Sablon/listed/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/font-awesome.min.css">
+    <link href="~/Content/tempp/Sablon/listed/css/set1.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/style.css">
+</head>
+
+
+<body>
+    
+
+        <div>
+        @RenderBody()
+        </div>
+
+
+        <footer class="main-block gray">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4 responsive-wrap">
+                        <div class="location">
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        
+                        </div>
+                    </div>
+                    <div class="col-md-4 responsive-wrap">
+                        <div class="footer-logo_wrap">
+                            <img src="~/Content/tempp/Sablon/listed/images/footer-logo.png" alt="#" class="img-fluid" />
+
+                        </div>
+                    </div>
+                    <div class="col-md-4 responsive-wrap">
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <p>Copyright © 2019 RestaurantBul</p>
+                            <a href="#">Gizlilik</a>
+                            <a href="#">Şartlar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+ 
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

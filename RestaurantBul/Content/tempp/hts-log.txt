@@ -1,0 +1,25 @@
+HTTrack3.49-2+htsswf+htsjava launched on Thu, 14 Mar 2019 09:45:15 at https://preview.themeforest.net/item/directory-listing-html-website-template-listeed/full_screen_preview/22035151?_ga=2.7987700.750713614.1552545558-426378331.1548329825 +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qYC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" -Y https://preview.themeforest.net/item/directory-listing-html-website-template-listeed/full_screen_preview/22035151?_ga=2.7987700.750713614.1552545558-426378331.1548329825 -O1 "C:\Users\Section1\Desktop\tempp" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+09:45:27	Warning: 	Note: due to s3.envato.com remote robots.txt rules, links beginning with these path will be forbidden: / (see in the options to disable this)
+09:45:27	Error: 	"Forbidden" (403) at link s3.envato.com/ (from https://preview.themeforest.net/item/directory-listing-html-website-template-listeed/full_screen_preview/22035151?_ga=2.7987700.750713614.1552545558-426378331.1548329825)
+09:45:46	Error: 	"Gone" (410) at link https://preview.themeforest.net/item/directory-listing-html-website-template-listeed/full_screen_preview/linkid.js (from https://preview.themeforest.net/item/directory-listing-html-website-template-listeed/full_screen_preview/22035151?_ga=2.7987700.750713614.1552545558-426378331.1548329825)
+09:45:46	Error: 	"Bad Request" (400) at link https://www.googletagmanager.com/gtm.js?id= (from https://preview.themeforest.net/item/directory-listing-html-website-template-listeed/full_screen_preview/22035151?_ga=2.7987700.750713614.1552545558-426378331.1548329825)
+09:45:51	Error: 	"Not Found" (404) at link https://themeforest.net/item/directory-listing-html-website-template-listeed/linkid.js (from https://themeforest.net/item/directory-listing-html-website-template-listeed/22035151)
+09:46:12	Error: 	"Not Found" (404) at link https://demo.web3canvas.com/themeforest/listed/login.html (from https://demo.web3canvas.com/themeforest/listed/index.html)
+09:46:12	Error: 	"Forbidden" (403) at link https://public-assets.envato-static.com/assets/market/pages/images/down.png (from https://public-assets.envato-static.com/assets/market/pages/default/index-72800f7f30bd477398be4c01fcc6b0d6eba09e93a76642467499c8788856045c.css)
+09:46:12	Error: 	"Not Found" (404) at link https://themeforest.net/item/directory-listing-html-website-template-listeed/reviews/linkid.js (from https://themeforest.net/item/directory-listing-html-website-template-listeed/reviews/22035151)
+09:46:12	Error: 	"Not Found" (404) at link https://themeforest.net/item/directory-listing-html-website-template-listeed/22035151/linkid.js (from https://themeforest.net/item/directory-listing-html-website-template-listeed/22035151/comments)
+09:46:12	Error: 	"Not Found" (404) at link https://demo.web3canvas.com/themeforest/listed/fonts/feathericons/feathericons.eot?-8is7zf (from https://demo.web3canvas.com/themeforest/listed/css/set1.css)
+09:46:12	Error: 	"Not Found" (404) at link https://demo.web3canvas.com/themeforest/listed/fonts/feathericons/feathericons.eot? (from https://demo.web3canvas.com/themeforest/listed/css/set1.css)
+09:46:12	Error: 	"Not Found" (404) at link https://demo.web3canvas.com/themeforest/listed/fonts/feathericons/feathericons.woff?-8is7zf (from https://demo.web3canvas.com/themeforest/listed/css/set1.css)
+09:46:12	Error: 	"Not Found" (404) at link https://demo.web3canvas.com/themeforest/listed/fonts/feathericons/feathericons.ttf?-8is7zf (from https://demo.web3canvas.com/themeforest/listed/css/set1.css)
+09:46:12	Error: 	"Not Found" (404) at link https://demo.web3canvas.com/themeforest/listed/fonts/feathericons/feathericons.svg?-8is7zf (from https://demo.web3canvas.com/themeforest/listed/css/set1.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 1 minutes 2 seconds : 139 links scanned, 122 files written (6454930 bytes overall) [3473425 bytes received at 56022 bytes/sec], 4542657 bytes transferred using HTTP compression in 68 files, ratio 32%, 5.3 requests per connection
+(13 errors, 1 warnings, 0 messages)

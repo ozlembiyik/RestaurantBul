@@ -65,6 +65,18 @@ namespace RestaurantBul.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Adınız")]
+        public string Name { get; set; }
+
+        [Required]
+        [Display(Name = "Soyadınız")]
+        public string Surname { get; set; }
+
+
+        [Phone]
+        [Display(Name = "Telefon")]
+        public string PhoneNumber { get; set; }
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -79,6 +91,9 @@ namespace RestaurantBul.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "User Rol")]
+        public string UserRole { get; set; }
     }
 
     public class ResetPasswordViewModel

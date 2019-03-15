@@ -9,6 +9,9 @@ namespace RestaurantBul.Models
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
     {
+        public string UserRole { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -29,5 +32,12 @@ namespace RestaurantBul.Models
         {
             return new ApplicationDbContext();
         }
+
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Place> Places { get; set; }
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<CatPlace> CatPlaces { get; set; }
+
     }
 }

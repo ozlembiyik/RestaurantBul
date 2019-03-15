@@ -1,0 +1,58 @@
+﻿@model RestaurantBul.Models.Comment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Comment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Place.PlaceName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Place.PlaceName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentContent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentContent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentPhoto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentPhoto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CommentPoint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CommentPoint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CommentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

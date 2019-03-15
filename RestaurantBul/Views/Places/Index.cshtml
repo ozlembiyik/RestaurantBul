@@ -1,0 +1,75 @@
+﻿@model IEnumerable<RestaurantBul.Models.Place>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PlaceName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MenuPic)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Adress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AvgPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Additional)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Famous)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PlaceName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MenuPic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Adress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AvgPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Additional)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Famous)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PlaceId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PlaceId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PlaceId })
+        </td>
+    </tr>
+}
+
+</table>

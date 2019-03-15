@@ -150,13 +150,13 @@ namespace RestaurantBul.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
-            //rol ekleme kısmı
+           // rol ekleme kısmı
             ApplicationDbContext db = new ApplicationDbContext();
             var rolemanager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
 
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, PhoneNumber = model.PhoneNumber, Ad = model.Name, Soyad = model.Surname, UserRole = model.UserRole };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, Name = model.Name, Surname = model.Surname, UserRole = model.UserRole };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -185,11 +185,12 @@ namespace RestaurantBul.Controllers
                 }
                 AddErrors(result);
 
-            }
 
-            // If we got this far, something failed, redisplay form
-            return View(model);
-        }
+
+            }
+                // If we got this far, something failed, redisplay form
+                return View(model);
+    }
         //
         // GET: /Account/ConfirmEmail
         [AllowAnonymous]

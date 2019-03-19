@@ -46,6 +46,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualStudio.DebuggerVisualizers, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -55,6 +56,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -174,31 +176,31 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CategoriesController.cs" />
-    <Compile Include="Controllers\CatPlacesController.cs" />
+    <Compile Include="Controllers\AdditionalsController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\PlacesController.cs" />
+    <Compile Include="Controllers\PlaceController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\MvcHtmlHelper.cs" />
-    <Compile Include="Migrations\201903150830288_df.cs" />
-    <Compile Include="Migrations\201903150830288_df.Designer.cs">
-      <DependentUpon>201903150830288_df.cs</DependentUpon>
+    <Compile Include="Migrations\201903191037039_ilk.cs" />
+    <Compile Include="Migrations\201903191037039_ilk.Designer.cs">
+      <DependentUpon>201903191037039_ilk.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\CatPlace.cs" />
+    <Compile Include="Models\Additional.cs" />
+    <Compile Include="Models\AdditionalPlace.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Place.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\ViewModel\PlaceAdditionalViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -362,6 +364,7 @@
     <Content Include="Content\tempp\hts-cache\new.zip" />
     <Content Include="Content\tempp\hts-cache\winprofile.ini" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Checkbox.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -400,31 +403,27 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Web.config" />
-    <Content Include="Views\Places\Create.cshtml" />
-    <Content Include="Views\Places\Delete.cshtml" />
-    <Content Include="Views\Places\Details.cshtml" />
-    <Content Include="Views\Places\Edit.cshtml" />
-    <Content Include="Views\Places\Index.cshtml" />
-    <Content Include="Views\Categories\Create.cshtml" />
-    <Content Include="Views\Categories\Delete.cshtml" />
-    <Content Include="Views\Categories\Details.cshtml" />
-    <Content Include="Views\Categories\Edit.cshtml" />
-    <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Comments\Create.cshtml" />
     <Content Include="Views\Comments\Delete.cshtml" />
     <Content Include="Views\Comments\Details.cshtml" />
     <Content Include="Views\Comments\Edit.cshtml" />
     <Content Include="Views\Comments\Index.cshtml" />
-    <Content Include="Views\CatPlaces\Create.cshtml" />
-    <Content Include="Views\CatPlaces\Delete.cshtml" />
-    <Content Include="Views\CatPlaces\Details.cshtml" />
-    <Content Include="Views\CatPlaces\Edit.cshtml" />
-    <Content Include="Views\CatPlaces\Index.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Delete.cshtml" />
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Shared\LoginLayout.cshtml" />
+    <Content Include="Views\Place\Create.cshtml" />
+    <Content Include="Views\Place\Delete.cshtml" />
+    <Content Include="Views\Place\Details.cshtml" />
+    <Content Include="Views\Place\Edit.cshtml" />
+    <Content Include="Views\Place\Index.cshtml" />
+    <Content Include="Views\Additionals\Create.cshtml" />
+    <Content Include="Views\Additionals\Delete.cshtml" />
+    <Content Include="Views\Additionals\Details.cshtml" />
+    <Content Include="Views\Additionals\Edit.cshtml" />
+    <Content Include="Views\Additionals\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -449,8 +448,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903150830288_df.resx">
-      <DependentUpon>201903150830288_df.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903191037039_ilk.resx">
+      <DependentUpon>201903191037039_ilk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

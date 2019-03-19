@@ -1,0 +1,138 @@
+﻿@model RestaurantBul.Models.Additional
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Additional</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Otopark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Otopark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DenizKenari)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DenizKenari)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DisMekan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DisMekan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.İcMekan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.İcMekan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TerasiVar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TerasiVar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AlkolServis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AlkolServis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Wifi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wifi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OnlineRezervasyon)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OnlineRezervasyon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kahvalti)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kahvalti)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GelAl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GelAl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HayvanDostu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HayvanDostu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SigaraAlanı)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SigaraAlanı)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaketServis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaketServis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TatlivePasta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TatlivePasta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CanliMuzik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CanliMuzik)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AdditionalId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

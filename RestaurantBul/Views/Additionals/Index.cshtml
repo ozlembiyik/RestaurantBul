@@ -1,0 +1,117 @@
+﻿@model IEnumerable<RestaurantBul.Models.Additional>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Otopark)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DenizKenari)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DisMekan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.İcMekan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TerasiVar)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AlkolServis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Wifi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OnlineRezervasyon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Kahvalti)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GelAl)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HayvanDostu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SigaraAlanı)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaketServis)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TatlivePasta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CanliMuzik)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Otopark)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DenizKenari)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DisMekan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.İcMekan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TerasiVar)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AlkolServis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Wifi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OnlineRezervasyon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Kahvalti)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GelAl)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HayvanDostu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SigaraAlanı)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaketServis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TatlivePasta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CanliMuzik)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AdditionalId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AdditionalId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AdditionalId })
+        </td>
+    </tr>
+}
+
+</table>

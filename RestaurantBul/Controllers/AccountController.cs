@@ -176,16 +176,16 @@ namespace RestaurantBul.Controllers
                         rolemanager.Create(role);
                     }
 
-                    await this.UserManager.AddToRoleAsync(user.Id, model.UserRole);
+                    await this.UserManager.AddToRoleAsync(user.Id,"User");
 
                     //await async metotlarla çalışır.
                     //db savechanges olmadan id ye yada değere ulaşmamızı sağlar.
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home", new { area = "" });
                 }
                 AddErrors(result);
 
-
+                return PartialView();
 
             }
                 // If we got this far, something failed, redisplay form

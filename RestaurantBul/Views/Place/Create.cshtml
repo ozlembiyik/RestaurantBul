@@ -1,0 +1,307 @@
+﻿@model RestaurantBul.Models.Place
+@{
+    /**/
+
+    ViewBag.Title = "Create";
+}
+<h2>Create</h2>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Surjith S M">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <script src="../../cdn-cgi/apps/head/-mEFVS8y7qx5pVzWHQTCQu5gnVM.js"></script>
+    <link rel="shortcut icon" href="#">
+    <title>RestaurantBul.</title>
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/themify-icons.css">
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/font-awesome.min.css">
+    <link href="~/Content/tempp/Sablon/listed/css/set1.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/tempp/Sablon/listed/css/style.css">
+</head>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <section class="subpage-bg">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="titile-block title-block_subpage">
+                        <h2>Restaurant Ekle</h2>
+                        <p> <a href="~/Home/Index"> Home</a> / Index</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main-block">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="listing-wrap">
+                        <form action="#">
+                            <div class="listing-title">
+                                <span class="ti-files"></span>
+                                <h4>Genel Bilgiler</h4>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.PlaceName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.PlaceName, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PlaceName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.CategoryName, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12">
+                                        @Html.EnumDropDownListFor(model => model.CategoryName, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.CategoryName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.AvgPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.AvgPrice, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.AvgPrice, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listing-title">
+                                <span class="ti-location-pin"></span>
+                                <h4>Konum Ekle</h4>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Adress, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.County, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.County, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.County, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-12">
+                                        @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                            </div>
+                            <div class="listing-title">
+                                <span class="ti-gallery"></span>
+                                <h4>Resim Ekle</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="custom-file">
+                                        <input type="file" name="MenuPic" id="MenuPic" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listing-title">
+                                <span class="ti-gift"></span>
+                                <h4>Ek Bilgi</h4>
+                            </div>
+                            <div class="row">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Otopark, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        <div class="checkbox">
+                                            @Html.EditorFor(model => model.Otopark)
+                                            @Html.ValidationMessageFor(model => model.Otopark, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i2" type="checkbox">
+                                        <label for="i2"></label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i3" type="checkbox">
+                                        <label for="i3">Wifi</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i4" type="checkbox">
+                                        <label for="i4">Deniz Kenarı</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i5" type="checkbox">
+                                        <label for="i5">Terası Var</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i6" type="checkbox">
+                                        <label for="i6">Online Rezervasyon</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i7" type="checkbox">
+                                        <label for="i7">Dış Mekan</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i8" type="checkbox">
+                                        <label for="i8">İç Mekan</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i9" type="checkbox">
+                                        <label for="i9">Paket Servis</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i11" type="checkbox">
+                                        <label for="i11">Gel Al</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i12" type="checkbox">
+                                        <label for="i12">Sigara İçme Alanı</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i13" type="checkbox">
+                                        <label for="i13">Tatlı ve Pasta</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i14" type="checkbox">
+                                        <label for="i14">Kahvaltı</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i15" type="checkbox">
+                                        <label for="i15">Hayvan Dostu</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i16" type="checkbox">
+                                        <label for="i16">Canlı Müzik</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="listing-title">
+                                <span class="ti-time"></span>
+                                <h4>Çalışma Saatleri</h4>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label class="listing-time">Haftaiçi</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.OpenTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.OpenTime, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.OpenTime, "", new { @class = "text-danger" })
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+
+                                        @Html.LabelFor(model => model.CloseTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.CloseTime, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.CloseTime, "", new { @class = "text-danger" })
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label class="listing-time">Haftasonu</label>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.OpenTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.OpenTime, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.OpenTime, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.CloseTime, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-12">
+                                            @Html.EditorFor(model => model.CloseTime, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.CloseTime, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-12">
+                                    <input type="submit" value="EKLE" style="background-color:tomato ; color:white" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

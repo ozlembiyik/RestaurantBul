@@ -6,13 +6,13 @@ using System.Web;
 
 namespace RestaurantBul.Models
 {
-    public class CatPlace
+    public class AdditionalPlace
     {
         [Key]
-        public int CatPlaceId { get; set; }
+        public int Id { get; set; }
         public int PlaceId { get; set; }
-        public int CategoryId { get; set; }
-        public virtual Category Category{ get; set; }
-        public virtual Place Place{ get; set; }
+        public int AdditionalId { get; set; }
+        public virtual Additional Additional { get; set; }
+        public virtual Place Place { get; set; }
     }
 }

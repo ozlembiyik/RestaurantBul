@@ -10,116 +10,107 @@ using RestaurantBul.Models;
 
 namespace RestaurantBul.Controllers
 {
-    public class CatPlacesController : Controller
+    public class AdditionalsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: CatPlaces
+        // GET: Additionals
         public ActionResult Index()
         {
-            var catPlaces = db.CatPlaces.Include(c => c.Category).Include(c => c.Place);
-            return View(catPlaces.ToList());
+            return View(db.Additionals.ToList());
         }
 
-        // GET: CatPlaces/Details/5
+        // GET: Additionals/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CatPlace catPlace = db.CatPlaces.Find(id);
-            if (catPlace == null)
+            Additional additional = db.Additionals.Find(id);
+            if (additional == null)
             {
                 return HttpNotFound();
             }
-            return View(catPlace);
+            return View(additional);
         }
 
-        // GET: CatPlaces/Create
+        // GET: Additionals/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryId");
-            ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "PlaceName");
             return View();
         }
 
-        // POST: CatPlaces/Create
+        // POST: Additionals/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CatPlaceId,PlaceId,CategoryId")] CatPlace catPlace)
+        public ActionResult Create([Bind(Include = "AdditionalId,Otopark,DenizKenari,DisMekan,İcMekan,TerasiVar,AlkolServis,Wifi,OnlineRezervasyon,Kahvalti,GelAl,HayvanDostu,SigaraAlanı,PaketServis,TatlivePasta,CanliMuzik")] Additional additional)
         {
             if (ModelState.IsValid)
             {
-                db.CatPlaces.Add(catPlace);
+                db.Additionals.Add(additional);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryId", catPlace.CategoryId);
-            ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", catPlace.PlaceId);
-            return View(catPlace);
+            return View(additional);
         }
 
-        // GET: CatPlaces/Edit/5
+        // GET: Additionals/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CatPlace catPlace = db.CatPlaces.Find(id);
-            if (catPlace == null)
+            Additional additional = db.Additionals.Find(id);
+            if (additional == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryId", catPlace.CategoryId);
-            ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", catPlace.PlaceId);
-            return View(catPlace);
+            return View(additional);
         }
 
-        // POST: CatPlaces/Edit/5
+        // POST: Additionals/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CatPlaceId,PlaceId,CategoryId")] CatPlace catPlace)
+        public ActionResult Edit([Bind(Include = "AdditionalId,Otopark,DenizKenari,DisMekan,İcMekan,TerasiVar,AlkolServis,Wifi,OnlineRezervasyon,Kahvalti,GelAl,HayvanDostu,SigaraAlanı,PaketServis,TatlivePasta,CanliMuzik")] Additional additional)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(catPlace).State = EntityState.Modified;
+                db.Entry(additional).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryId = new SelectList(db.Categories, "CategoryId", "CategoryId", catPlace.CategoryId);
-            ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", catPlace.PlaceId);
-            return View(catPlace);
+            return View(additional);
         }
 
-        // GET: CatPlaces/Delete/5
+        // GET: Additionals/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CatPlace catPlace = db.CatPlaces.Find(id);
-            if (catPlace == null)
+            Additional additional = db.Additionals.Find(id);
+            if (additional == null)
             {
                 return HttpNotFound();
             }
-            return View(catPlace);
+            return View(additional);
         }
 
-        // POST: CatPlaces/Delete/5
+        // POST: Additionals/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            CatPlace catPlace = db.CatPlaces.Find(id);
-            db.CatPlaces.Remove(catPlace);
+            Additional additional = db.Additionals.Find(id);
+            db.Additionals.Remove(additional);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

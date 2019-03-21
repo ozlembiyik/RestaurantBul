@@ -131,19 +131,16 @@
                                 <h4>Ek Bilgi</h4>
                             </div>
                             <div class="row">
-                                <div class="form-group">
-                                    @Html.LabelFor(model => model.Otopark, htmlAttributes: new { @class = "control-label col-md-2" })
-                                    <div class="col-md-10">
-                                        <div class="checkbox">
-                                            @Html.EditorFor(model => model.Otopark)
-                                            @Html.ValidationMessageFor(model => model.Otopark, "", new { @class = "text-danger" })
-                                        </div>
+                                <div class="col-md-4 responsive-wrap">
+                                    <div class="md-checkbox">
+                                        <input id="i1" type="checkbox">
+                                        <label for="i1">Otopark</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4 responsive-wrap">
                                     <div class="md-checkbox">
                                         <input id="i2" type="checkbox">
-                                        <label for="i2"></label>
+                                        <label for="i2">xcv</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4 responsive-wrap">

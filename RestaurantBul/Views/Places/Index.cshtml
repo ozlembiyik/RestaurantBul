@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "AddPlace")
 </p>
 <table class="table">
     <tr>
@@ -53,7 +53,8 @@
             @Html.DisplayFor(modelItem => item.CategoryName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.MenuPic)
+            <img width="75" src="@item.MenuPic" />
+            @*@Html.DisplayFor(modelItem => item.MenuPic)*@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Phone)

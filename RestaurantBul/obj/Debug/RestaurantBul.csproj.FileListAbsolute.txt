@@ -218,5 +218,7 @@ C:\Users\Section1\Source\Repos\RestaurantBul3\RestaurantBul\bin\RestaurantBul.dl
 C:\Users\Section1\Source\Repos\RestaurantBul3\RestaurantBul\obj\Debug\RestaurantBul.Migrations.df.resources
 C:\Users\Section1\Source\Repos\RestaurantBul3\RestaurantBul\obj\Debug\RestaurantBul.csproj.GenerateResource.cache
 C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\bin\Microsoft.VisualStudio.DebuggerVisualizers.dll
-C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.Migrations.ilk.resources
+C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.csprojAssemblyReference.cache
+C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.Migrations.df.resources
 C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.csproj.GenerateResource.cache
+C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.Migrations.df1.resources

@@ -51,5 +51,9 @@ namespace RestaurantBul.Models
 
         [Display(Name = "Canlı Müzik")]
         public  bool CanliMuzik { get; set; }
+
+
+        public virtual ICollection<AdditionalPlace> AdditionalPlaces { get; set; }
+
     }
 }

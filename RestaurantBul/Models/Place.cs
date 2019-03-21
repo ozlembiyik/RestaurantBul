@@ -9,6 +9,7 @@ namespace RestaurantBul.Models
 {
     public class Place
     {
+        [Key]
         public int PlaceId { get; set; }
         [Display(Name = "Mekan Adı")]
         public string PlaceName { get; set; }
@@ -35,11 +36,9 @@ namespace RestaurantBul.Models
         [Display(Name = "Ortalama Tutar")]
         public decimal AvgPrice { get; set; }
       
-        
-     
-
         //bir mekanın birden fazla yorumu olabilir.
         public virtual ICollection<Comment> Comment { get; set; }
+        public virtual ICollection<AdditionalPlace> AdditionalPlaces { get; set; }
 
     }
 }

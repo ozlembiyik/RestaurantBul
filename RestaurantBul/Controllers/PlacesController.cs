@@ -62,16 +62,14 @@ namespace RestaurantBul.Controllers
             db.SaveChanges();
             return View(result);
         }
-
-
-
-
-
+        public ActionResult DetailPlace()
+        {
+            return View();
+        }
 
         [HttpGet]
         public ActionResult AddPlace()
         {
-
             return View();
         }
         [HttpPost]

@@ -13,7 +13,7 @@ using RestaurantBul.Models;
 
 namespace RestaurantBul.Controllers
 {
-    [Authorize]
+
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -52,13 +52,13 @@ namespace RestaurantBul.Controllers
                 _userManager = value;
             }
         }
+    
 
         //
         // GET: /Account/Login
         [AllowAnonymous]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login()
         {
-            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
@@ -177,9 +177,26 @@ namespace RestaurantBul.Controllers
                     }
 
                     await this.UserManager.AddToRoleAsync(user.Id,"User");
+                   
 
                     //await async metotlarla çalışır.
                     //db savechanges olmadan id ye yada değere ulaşmamızı sağlar.
+
+
+                    user.Name = "Ozlem";
+                    user.Surname = "Biyik";
+                    user.UserRole = "Admin";
+                    user.Email = "ozlem@outlook.com";
+
+                    string userPWD = "Ozlem123.";
+
+                    var chkUser = UserManager.Create(user, userPWD);
+
+                    //Add default User to Role Admin
+                    if (chkUser.Succeeded)
+                    {
+                        var result1 = UserManager.AddToRole(user.Id, "Admin");
+                    }
 
                     return RedirectToAction("Index", "Home", new { area = "" });
                 }
@@ -410,6 +427,12 @@ namespace RestaurantBul.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Index", "Home");
+        }
+        public ActionResult LogOut()
+        {
+            //logoftakini tasıdık.
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
             return RedirectToAction("Index", "Home");
         }

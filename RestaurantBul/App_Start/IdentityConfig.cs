@@ -86,6 +86,11 @@ namespace RestaurantBul
             }
             return manager;
         }
+
+        internal object AddToRole(object ıd, string v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     // Configure the application sign-in manager which is used in this application.

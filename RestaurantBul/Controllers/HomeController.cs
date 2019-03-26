@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantBul.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,8 @@ namespace RestaurantBul.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
         public ActionResult Index()
         {
             return View();
@@ -25,6 +28,17 @@ namespace RestaurantBul.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public JsonResult YorumYap(string yorum,int PlaceID)
+        {
+            var uyeId = Session["uyeId"];
+            if (yorum!=null)
+            {
+                db.Comments.Add(new Comment {UserId=Convert.ToInt32(uyeId),PlaceId=PlaceID,CommentContent=yorum});
+            }
+            return Json(false, JsonRequestBehavior.AllowGet);
+            
         }
     }
 }

@@ -88,7 +88,8 @@ namespace RestaurantBul.Models
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
-        [Display(Name = "User Rol")]
+        [Required]
+        [Display(Name = "User Role")]
         public string UserRole { get; set; }
     }
 

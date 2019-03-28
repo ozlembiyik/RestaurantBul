@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 using RestaurantBul.Models;
 
 namespace RestaurantBul.Controllers
@@ -50,6 +51,7 @@ namespace RestaurantBul.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "CommentId,CommentContent,CommentPhoto,CommentPoint,UserId,PlaceId")] Comment comment)
         {
+         
             if (ModelState.IsValid)
             {
                 db.Comments.Add(comment);

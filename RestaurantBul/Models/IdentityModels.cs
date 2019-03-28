@@ -36,7 +36,6 @@ namespace RestaurantBul.Models
         public DbSet<Additional> Additionals { get; set; }
         public DbSet<Place> Places { get; set; }
         public DbSet<Comment> Comments { get; set; }
-        public DbSet<User> User { get; set; }
         public DbSet<AdditionalPlace> AdditionalPlaces { get; set; }
     
 

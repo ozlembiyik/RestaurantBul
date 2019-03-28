@@ -222,3 +222,6 @@ C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantB
 C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.Migrations.df.resources
 C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.csproj.GenerateResource.cache
 C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.Migrations.df1.resources
+C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.Migrations.fg.resources
+C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.Migrations.jh.resources
+C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.Migrations.j.resources

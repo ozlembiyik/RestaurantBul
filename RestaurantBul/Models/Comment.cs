@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -17,11 +18,15 @@ namespace RestaurantBul.Models
         public string CommentPoint{ get; set; }
 
         //bir yorum bir kullanıcıya ait
-        public int? UserId { get; set; }
-        public virtual User User { get; set; }
+        public string UserId { get; set; }
+        public  ApplicationUser ApplicationUser { get; set; }  
         //bir yorum bir mekana ait
         public int? PlaceId { get; set; }
         public virtual Place Place { get; set; }
+        [NotMapped]
+        public virtual Place Places { get; set; }
+       
+      
 
     }
 }

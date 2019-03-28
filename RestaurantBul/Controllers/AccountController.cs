@@ -59,7 +59,9 @@ namespace RestaurantBul.Controllers
         [AllowAnonymous]
         public ActionResult Login()
         {
+           
             return View();
+           
         }
 
         //
@@ -183,20 +185,20 @@ namespace RestaurantBul.Controllers
                     //db savechanges olmadan id ye yada değere ulaşmamızı sağlar.
 
 
-                    user.Name = "Ozlem";
-                    user.Surname = "Biyik";
-                    user.UserRole = "Admin";
-                    user.Email = "ozlem@outlook.com";
+                    //user.Name = "Ozlem";
+                    //user.Surname = "Biyik";
+                    //user.UserRole = "Admin";
+                    //user.Email = "ozlem@outlook.com";
 
-                    string userPWD = "Ozlem123.";
+                    //string userPWD = "Ozlem123.";
 
-                    var chkUser = UserManager.Create(user, userPWD);
+                    //var chkUser = UserManager.Create(user, userPWD);
 
-                    //Add default User to Role Admin
-                    if (chkUser.Succeeded)
-                    {
-                        var result1 = UserManager.AddToRole(user.Id, "Admin");
-                    }
+                    ////Add default User to Role Admin
+                    //if (chkUser.Succeeded)
+                    //{
+                    //    var result1 = UserManager.AddToRole(user.Id, "Admin");
+                    //}
 
                     return RedirectToAction("Index", "Home", new { area = "" });
                 }

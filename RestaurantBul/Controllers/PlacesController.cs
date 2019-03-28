@@ -5,9 +5,12 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Claims;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using RestaurantBul.Models;
 using RestaurantBul.Models.ViewModel;
 using static RestaurantBul.Enums.Enums;
@@ -62,10 +65,33 @@ namespace RestaurantBul.Controllers
             db.SaveChanges();
             return View(result);
         }
-        public ActionResult DetailPlace()
+        public ActionResult PlaceDetails()
         {
             return View();
         }
+        //public JsonResult YorumYap(Comment yorum, int PlaceID,string yorums)
+        //{
+        //    string usid = User.Identity.GetUserId();
+        //    var result = (from a in db.Users
+        //              where a.Id == usid
+        //              select a).FirstOrDefault();
+        //    yorum.ApplicationUser = result;
+        //    if (yorums != null)
+        //    {
+        //        db.Comments.Add(new Comment {PlaceId = PlaceID,CommentContent=yorums,UserId=usid});
+        //    }
+
+        //    return Json(false, JsonRequestBehavior.AllowGet);     
+        //}
+
+        public ActionResult SearchPlace(string search = null)
+        {
+            CategoryName catname = new CategoryName();
+            var aranan = db.Places.Where(x => x.PlaceName.Contains(search)).ToList();
+            return View();
+        }
+
+
 
         [HttpGet]
         public ActionResult AddPlace()

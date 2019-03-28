@@ -30,15 +30,6 @@ namespace RestaurantBul.Controllers
             return View();
         }
 
-        public JsonResult YorumYap(string yorum,int PlaceID)
-        {
-            var uyeId = Session["uyeId"];
-            if (yorum!=null)
-            {
-                db.Comments.Add(new Comment {UserId=Convert.ToInt32(uyeId),PlaceId=PlaceID,CommentContent=yorum});
-            }
-            return Json(false, JsonRequestBehavior.AllowGet);
-            
-        }
+       
     }
 }

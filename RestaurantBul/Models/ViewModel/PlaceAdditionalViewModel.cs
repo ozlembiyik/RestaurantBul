@@ -77,5 +77,10 @@ namespace RestaurantBul.Models.ViewModel
 
         [Display(Name = "Canlı Müzik")]
         public bool CanliMuzik { get; set; }
+        public string CommentContent { get; set; }
+        [Display(Name = "Fotoğraf")]
+        public string CommentPhoto { get; set; }
+        [Display(Name = "Puan")]
+        public string CommentPoint { get; set; }
     }
 }

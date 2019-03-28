@@ -24,7 +24,7 @@
             @Html.DisplayNameFor(model => model.CommentPoint)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.UserId)
+            @Html.DisplayNameFor(model => model.ApplicationUser.Id)
         </th>
         <th></th>
     </tr>
@@ -44,7 +44,7 @@
             @Html.DisplayFor(modelItem => item.CommentPoint)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.UserId)
+            @Html.DisplayFor(modelItem => item.ApplicationUser.Id)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.CommentId }) |

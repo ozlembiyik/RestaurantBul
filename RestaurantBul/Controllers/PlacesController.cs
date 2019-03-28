@@ -84,14 +84,19 @@ namespace RestaurantBul.Controllers
         //    return Json(false, JsonRequestBehavior.AllowGet);     
         //}
 
-        public ActionResult SearchPlace(string search = null)
+        [HttpGet]
+        public ActionResult SearchPlace()
         {
-            CategoryName catname = new CategoryName();
-            var aranan = db.Places.Where(x => x.PlaceName.Contains(search)).ToList();
             return View();
         }
 
-
+        [HttpPost]
+        public ActionResult SearchPlace(string search = null)
+        {
+           
+            var aranan = db.Places.Where(x => x.PlaceName.Contains(search)).ToList();
+            return View(aranan.OrderByDescending(x=>x.AvgPrice>50));
+        }
 
         [HttpGet]
         public ActionResult AddPlace()

@@ -49,36 +49,11 @@
 
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <form>
-                        <div class="search-box">
-                            <div class="row">
-                                <div class="col-md-6 search-box_line" style="background-color:white">
-                                    <div class="search-box1">
-                                        <div class="search-box-title">
-                                            <label>Ne?</label><br>
-                                            <input type="text" name="#" class="search-form" placeholder="Eg: restaurant, spa, shopping">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="search-box2" style="background-color:white">
-                                        <div class="search-box-title">
-                                            <label>Nerede?</label><br>
-                                            <input type="text" name="#" class="search-form" placeholder="Eg:  Sanfransisco, United States">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="btn-search">
-                            <a href="#" class="btn btn-simple">Ara →</a>
-                        </div>
-                    </form>
-                    <p class="search-bottom-title"> <a href="@Url.Action("SearchPlace","Places")"> </a></p>
-                </div>
-            </div>
+
+            <!--SEARCH-->
+            @Html.Partial("_PartialSearch")
+            
+
         </div>
     </section>
 

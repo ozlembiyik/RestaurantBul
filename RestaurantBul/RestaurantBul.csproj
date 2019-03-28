@@ -180,32 +180,16 @@
     <Compile Include="Controllers\AdditionalsController.cs" />
     <Compile Include="Controllers\CommentsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="obj\ManageController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PlacesController.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\MvcHtmlHelper.cs" />
-    <Compile Include="Migrations\201903210646300_df.cs" />
-    <Compile Include="Migrations\201903210646300_df.Designer.cs">
-      <DependentUpon>201903210646300_df.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903211059500_df1.cs" />
-    <Compile Include="Migrations\201903211059500_df1.Designer.cs">
-      <DependentUpon>201903211059500_df1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903270933179_fg.cs" />
-    <Compile Include="Migrations\201903270933179_fg.Designer.cs">
-      <DependentUpon>201903270933179_fg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903280640145_jh.cs" />
-    <Compile Include="Migrations\201903280640145_jh.Designer.cs">
-      <DependentUpon>201903280640145_jh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903280820241_j.cs" />
-    <Compile Include="Migrations\201903280820241_j.Designer.cs">
-      <DependentUpon>201903280820241_j.cs</DependentUpon>
+    <Compile Include="Migrations\201903281527484_ilk.cs" />
+    <Compile Include="Migrations\201903281527484_ilk.Designer.cs">
+      <DependentUpon>201903281527484_ilk.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -451,6 +435,9 @@
     <Content Include="Views\Places\EatList.cshtml" />
     <Content Include="Views\Places\CafeList.cshtml" />
     <Content Include="Views\Places\PlaceDetails.cshtml" />
+    <Content Include="Views\Places\_PartialSearch.cshtml" />
+    <Content Include="Views\Places\SearchPlace.cshtml" />
+    <Content Include="Views\Home\_PartialSearch.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -476,20 +463,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903210646300_df.resx">
-      <DependentUpon>201903210646300_df.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903211059500_df1.resx">
-      <DependentUpon>201903211059500_df1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903270933179_fg.resx">
-      <DependentUpon>201903270933179_fg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903280640145_jh.resx">
-      <DependentUpon>201903280640145_jh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903280820241_j.resx">
-      <DependentUpon>201903280820241_j.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903281527484_ilk.resx">
+      <DependentUpon>201903281527484_ilk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

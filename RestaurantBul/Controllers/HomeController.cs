@@ -30,6 +30,13 @@ namespace RestaurantBul.Controllers
             return View();
         }
 
+        public ActionResult _PartialSearch()
+        {
+            return PartialView("_PartialSearch");
+        }
+
+
+
        
     }
 }

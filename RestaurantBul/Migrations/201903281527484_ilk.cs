@@ -3,7 +3,7 @@ namespace RestaurantBul.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class df : DbMigration
+    public partial class ilk : DbMigration
     {
         public override void Up()
         {
@@ -70,15 +70,15 @@ namespace RestaurantBul.Migrations
                         CommentContent = c.String(),
                         CommentPhoto = c.String(),
                         CommentPoint = c.String(),
-                        UserId = c.Int(),
+                        UserId = c.String(),
                         PlaceId = c.Int(),
-                        User_Id = c.String(maxLength: 128),
+                        ApplicationUser_Id = c.String(maxLength: 128),
                     })
                 .PrimaryKey(t => t.CommentId)
+                .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUser_Id)
                 .ForeignKey("dbo.Places", t => t.PlaceId)
-                .ForeignKey("dbo.AspNetUsers", t => t.User_Id)
                 .Index(t => t.PlaceId)
-                .Index(t => t.User_Id);
+                .Index(t => t.ApplicationUser_Id);
             
             CreateTable(
                 "dbo.AspNetUsers",
@@ -99,8 +99,6 @@ namespace RestaurantBul.Migrations
                         LockoutEnabled = c.Boolean(nullable: false),
                         AccessFailedCount = c.Int(nullable: false),
                         UserName = c.String(nullable: false, maxLength: 256),
-                        UserId = c.Int(),
-                        Discriminator = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => t.Id)
                 .Index(t => t.UserName, unique: true, name: "UserNameIndex");
@@ -138,8 +136,8 @@ namespace RestaurantBul.Migrations
                         RoleId = c.String(nullable: false, maxLength: 128),
                     })
                 .PrimaryKey(t => new { t.UserId, t.RoleId })
-                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
                 .ForeignKey("dbo.AspNetUsers", t => t.UserId, cascadeDelete: true)
+                .ForeignKey("dbo.AspNetRoles", t => t.RoleId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
             
@@ -157,12 +155,12 @@ namespace RestaurantBul.Migrations
         
         public override void Down()
         {
+            DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.Comments", "PlaceId", "dbo.Places");
+            DropForeignKey("dbo.Comments", "ApplicationUser_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
-            DropForeignKey("dbo.Comments", "User_Id", "dbo.AspNetUsers");
-            DropForeignKey("dbo.Comments", "PlaceId", "dbo.Places");
             DropForeignKey("dbo.AdditionalPlaces", "PlaceId", "dbo.Places");
             DropForeignKey("dbo.AdditionalPlaces", "AdditionalId", "dbo.Additionals");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
@@ -171,7 +169,7 @@ namespace RestaurantBul.Migrations
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.Comments", new[] { "User_Id" });
+            DropIndex("dbo.Comments", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.Comments", new[] { "PlaceId" });
             DropIndex("dbo.AdditionalPlaces", new[] { "AdditionalId" });
             DropIndex("dbo.AdditionalPlaces", new[] { "PlaceId" });

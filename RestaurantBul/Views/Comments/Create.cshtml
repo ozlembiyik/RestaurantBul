@@ -26,8 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CommentPhoto, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CommentPhoto, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CommentPhoto, "", new { @class = "text-danger" })
+                <input type="file" name="CommentPic" id="CommentPic" class="form-control" />
             </div>
         </div>
 
@@ -39,21 +38,8 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ApplicationUser.Id, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.ApplicationUser.Id, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.ApplicationUser.Id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PlaceId, "PlaceId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("PlaceId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.PlaceId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        
+        
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">

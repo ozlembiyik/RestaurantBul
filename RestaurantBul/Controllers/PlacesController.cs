@@ -27,6 +27,11 @@ namespace RestaurantBul.Controllers
             return View(db.Places.ToList());
         }
 
+        public ActionResult _PartialCommentList()
+        {
+            return PartialView("_PartialCommentList");
+        }
+
         public ActionResult BreakfastList()
         {
             CategoryName breakfast = CategoryName.Kahvalti;
@@ -84,17 +89,17 @@ namespace RestaurantBul.Controllers
         //    return Json(false, JsonRequestBehavior.AllowGet);     
         //}
 
-        [HttpGet]
-        public ActionResult SearchPlace()
-        {
-            return View();
-        }
+        //[HttpGet]
+        //public ActionResult SearchPlace()
+        //{
+        //    return View();
+        //}
 
         [HttpPost]
-        public ActionResult SearchPlace(string search = null)
+        public ActionResult SearchPlace(string search)
         {
            
-            var aranan = db.Places.Where(x => x.PlaceName.Contains(search)).ToList();
+            var aranan = db.Places.Where(x => x.PlaceName==search || x.City==search).ToList();
             return View(aranan.OrderByDescending(x=>x.AvgPrice>50));
         }
 

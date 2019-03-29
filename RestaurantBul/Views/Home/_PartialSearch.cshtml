@@ -1,31 +1,31 @@
-﻿
-@using (Html.BeginForm("SearchPlace", "Places", FormMethod.Post,new { enctype="multipart/form-data" }))
+﻿@using (Html.BeginForm("SearchPlace", "Places", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8" style="margin-left:230px;">
             <form>
                 <div class="search-box">
                     <div class="row">
-                        <div class="col-md-6 search-box_line" style="background-color:white">
+                        <div class="col-md-12" style="background-color:white">
                             <div class="search-box1">
                                 <div class="search-box-title">
                                     <label>Ne?</label><br>
-                                    <input type="text" id="Ara" name="Ara" class="search-form" placeholder="Eg: restaurant, spa, shopping">
+                                    <input type="text" id="search" name="search" class="search-form" placeholder="Eg: restaurant, spa, shopping">
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="search-box2" style="background-color:white">
-                                <div class="search-box-title">
-                                    <label>Nerede?</label><br>
-                                    <input type="text" id="Ara" name="Ara" class="search-form" placeholder="Eg:  Sanfransisco, United States">
+                        @*<div class="col-md-6">
+                                <div class="search-box2" style="background-color:white">
+                                    <div class="search-box-title">
+                                        <label>Nerede?</label><br>
+                                        <input type="text" id="search" name="search" class="search-form" placeholder="Eg:  Sanfransisco, United States">
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            </div>*@
                     </div>
                 </div>
                 <div class="btn-search">
-                    <button class="btn btn-default"  value="Ara" type="submit">
+                    <button class="btn btn-default" value="search" type="submit" style="background-color:tomato;color:white">
+                        Ara
                         <span class="glyphicon glyphicon-search"></span>
                     </button>
                 </div>
@@ -35,5 +35,3 @@
     </div>
 
 }
-
-

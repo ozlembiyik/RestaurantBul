@@ -47,13 +47,13 @@
                                 <div class="col-md-4 card-2">
 
                                     <div class="card">
-                                        
+
                                         <a href="@Url.Action("PlaceDetails","Places")"><img class="card-img-top" src="@item.MenuPic" alt="Card image cap"></a>
                                         <div class="card-body">
                                             <h5 class="card-title">@item.PlaceName</h5>
                                             <ul class="card-rating">
                                                 <li>5.0</li>
-                                                <li>3 Yorum</li>
+                                                <li><a href="@Url.Action("Index","Comments")" style=" color:tomato">Yorumlar</a></li>
                                                 <li><i class="fa fa-circle" aria-hidden="true"></i></li>
                                                 <li>@item.AvgPrice</li>
                                                 <li><i class="fa fa-circle" aria-hidden="true"></i></li>
@@ -72,6 +72,12 @@
                                             </ul>
                                             <p class="card-text">Ek Bilgi</p>
                                         </div>
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <a href="@Url.Action("Create","Comments",new { Id=item.PlaceId})" type="button" class="btn btn-default" style="background-color:tomato ; color:white">Yorum Yap</a>
+                                            </div>
+                                        </div>
+
                                         <div class="card-bottom">
                                             <p><i class="ti-location-pin"></i>@item.County</p>
                                             <span>@item.OpenTime - @item.CloseTime</span>

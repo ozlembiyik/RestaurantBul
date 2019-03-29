@@ -435,9 +435,10 @@
     <Content Include="Views\Places\EatList.cshtml" />
     <Content Include="Views\Places\CafeList.cshtml" />
     <Content Include="Views\Places\PlaceDetails.cshtml" />
-    <Content Include="Views\Places\_PartialSearch.cshtml" />
     <Content Include="Views\Places\SearchPlace.cshtml" />
     <Content Include="Views\Home\_PartialSearch.cshtml" />
+    <Content Include="Views\Places\_PartialCommentList.cshtml" />
+    <Content Include="Views\Comments\YorumList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

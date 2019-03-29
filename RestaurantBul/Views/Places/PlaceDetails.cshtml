@@ -171,137 +171,93 @@
                     <div class="booking-checkbox_wrap booking-your-review">
                         <h5>Yorum Yap</h5>
                         @*@if (ViewData["uyeId"] != null)
-                        {*@
-                            <div class="customer-review_wrap">
-                                <div class="customer-img">
-                                    <img src="images/avatar.jpg" class="img-fluid" alt="#">
-                                </div>
-                                <div class="customer-content-wrap">
-                                    <div class="your-rating-wrap">
-                                        <span>Your rating</span>
-                                        <div class="customer-review">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span class="round-icon-blank"></span>
+            {*@
+                        <div class="customer-review_wrap">
+                            <div class="customer-img">
+                                <img src="images/avatar.jpg" class="img-fluid" alt="#">
+                            </div>
+                            <div class="customer-content-wrap">
+                                <div class="your-rating-wrap">
+                                    <span>Your rating</span>
+                                    <div class="customer-review">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span class="round-icon-blank"></span>
 
-                                        </div>
                                     </div>
-                                    <div class="your-comment-wrap">
-                                        <textarea name="#" id="yorum" typeof="text" class="your-rating-content" placeholder="Enter Your Comments">
+                                </div>
+                                <div class="your-comment-wrap">
+                                    <textarea name="#" id="yorum" typeof="text" class="your-rating-content" placeholder="Enter Your Comments">
                 </textarea>
-                                        <h6 class="your-rating-notify">En fazla 140 karakter</h6>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-4 mr-auto">
-                                            <div class="add-photos-link mb-3 mb-md-0">
-                                                <a href="#">
-                                                    <i class="icon-picture"></i>Add Photos
-                                                </a>
-                                            </div>
+                                    <h6 class="your-rating-notify">En fazla 140 karakter</h6>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 mr-auto">
+                                        <div class="add-photos-link mb-3 mb-md-0">
+                                            <a href="#">
+                                                <i class="icon-picture"></i>Add Photos
+                                            </a>
                                         </div>
-                                        <div class="col-md-4">
-                                            <div class="your-rating-btn">
-                                                <a href="#" class="btn btn-danger btn-block">Yorum Yap</a>
-                                            </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="your-rating-btn">
+                                            <a href="#" class="btn btn-danger btn-block">Yorum Yap</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         @*}
-                        else
-                        {*@
-                            <h2>Yorum yapmak için giriş yapmalısınız.</h2>
-                            <p> <a href="@Url.Action("Login","Account")">Giriş Yap</a></p>
+            else
+            {*@
+                        <h2>Yorum yapmak için giriş yapmalısınız.</h2>
+                        <p> <a href="@Url.Action("Login","Account")">Giriş Yap</a></p>
                         @*}*@
                     </div>
 
-
-
-
+                    <!--YorumListesi-->
                     <div class="booking-checkbox_wrap my-4">
                         <h4>Yorumlar</h4>
+                        <hr />
+                        @Html.Partial("_PartialCommentList")
                         <hr>
-                        @*@foreach (var item in Model.ToList())
-                        {
-                            <div class="customer-review_wrap">
-                                <div class="customer-img">
-                                    <img src="images/customer-img1.jpg" class="img-fluid" alt="#">
-                                    <p>@item.ApplicationUser.UserName</p>
-                                    <span>35 Reviews</span>
-                                </div>
-                                <div class="customer-content-wrap">
-                                    <div class="customer-content">
-                                        <div class="customer-review">
-                                            <h5>Best noodles in the Newyork city</h5>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span class="round-icon-blank"></span>
-                                            <p> </p>
-                                        </div>
-                                        <div class="customer-rating">8.0</div>
-                                    </div>
-                                    <p class="customer-text">
-                                      @item.CommentContent
-                                    </p>
-                                    <ul>
-                                        <li>
-                                            <img src="images/review-img1.jpg" class="img-fluid" alt="#">
-                                        </li>
-                                        <li>
-                                            <img src="images/review-img2.jpg" class="img-fluid" alt="#">
-                                        </li>
-                                        <li>
-                                            <img src="images/review-img3.jpg" class="img-fluid" alt="#">
-                                        </li>
-                                    </ul>
-                                    <span>28 people marked this review as helpful</span>
-                                    <a href="#" class="helpful-btn">
-                                        <span class="icon-like"></span>Helpful
-                                    </a>
-                                </div>
+
+                    </div>
+                    </div>
+
+
+                    <div class="col-md-4 responsive-wrap">
+                        <div class="contact-info">
+                            <img src="images/map.jpg" class="img-fluid" alt="#">
+                            <div class="address">
+                                <span class="icon-location-pin"></span>
+                                <p>
+                                    Doyers St
+                                    <br> New York, NY 10013
+                                    <br> b/t Division St & St James Pl
+                                    <br> Chinatown, Civic Center
+                                </p>
                             </div>
-                        }*@
-
-                        <hr>
+                            <div class="address">
+                                <span class="icon-screen-smartphone"></span>
+                                <p> +44 20 7336 8898</p>
+                            </div>
+                            <div class="address">
+                                <span class="icon-link"></span>
+                                <p>https://burgerandlobster.com</p>
+                            </div>
+                            <div class="address">
+                                <span class="icon-clock"></span>
+                                <p>Mon - Sun 09:30 am - 05:30 pm </p>
+                                <a href="#" class="featured-open">OPEN NOW</a>
+                            </div>
+                            <a href="#" class="btn btn-outline-danger btn-contact">SEND A MESSAGE</a>
+                        </div>
 
                     </div>
                 </div>
-
-
-                <div class="col-md-4 responsive-wrap">
-                    <div class="contact-info">
-                        <img src="images/map.jpg" class="img-fluid" alt="#">
-                        <div class="address">
-                            <span class="icon-location-pin"></span>
-                            <p>
-                                Doyers St
-                                <br> New York, NY 10013
-                                <br> b/t Division St & St James Pl
-                                <br> Chinatown, Civic Center
-                            </p>
-                        </div>
-                        <div class="address">
-                            <span class="icon-screen-smartphone"></span>
-                            <p> +44 20 7336 8898</p>
-                        </div>
-                        <div class="address">
-                            <span class="icon-link"></span>
-                            <p>https://burgerandlobster.com</p>
-                        </div>
-                        <div class="address">
-                            <span class="icon-clock"></span>
-                            <p>Mon - Sun 09:30 am - 05:30 pm </p>
-                            <a href="#" class="featured-open">OPEN NOW</a>
-                        </div>
-                        <a href="#" class="btn btn-outline-danger btn-contact">SEND A MESSAGE</a>
-                    </div>
-
-                </div>
-            </div>
         </div>
     </section>
 
@@ -319,24 +275,7 @@
     <script src="js/swiper.min.js"></script>
 
   
-        <script type="text/javascript">
-       $(document).ready(function () {
-           $("#gonder").click(function () {
-               var yorumunuz = $("#yorum").val();
-               $.ajax({
-                   url: '/Place/YorumYap',
-                   data: (yorum: yorumunuz, PlaceId:@Model.FirstOrDefault().PlaceId),
-                   type: 'POST',
-                   dataType: 'json',
-                   success: function (data) {
-                       alert('Başarılı' + yorumunuz);
-                   }
-
-               });
-           });
-       })
-
-    </script>
+        
  
 
 

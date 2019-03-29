@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using RestaurantBul.Models;
@@ -49,19 +51,68 @@ namespace RestaurantBul.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CommentId,CommentContent,CommentPhoto,CommentPoint,UserId,PlaceId")] Comment comment)
+        public ActionResult Create([Bind(Include = "CommentId,CommentContent,CommentPhoto,CommentPoint,UserId,PlaceId")] Comment comment,int Id,HttpPostedFileBase CommentPic)
         {
-         
+
             if (ModelState.IsValid)
             {
-                db.Comments.Add(comment);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    if (CommentPic != null)
+                    {
+                        WebImage img = new WebImage(CommentPic.InputStream);
+                        FileInfo photoInfo = new FileInfo(CommentPic.FileName);
+
+                        string newfoto = Guid.NewGuid().ToString() + photoInfo.Extension;
+                        img.Resize(800, 350); //resim boyutu için
+                        img.Save("../UpLoads/Pictures/" + newfoto);
+                        comment.CommentPhoto = "../UpLoads/Pictures/" + newfoto;
+                    }
+
+                    string usid = User.Identity.GetUserId();
+                    var us = (from a in db.Users
+                              where a.Id == usid
+                              select a).FirstOrDefault();
+                    comment.ApplicationUser = us;
+                    var pla = (from a in db.Places
+                               where a.PlaceId == Id
+                               select a).FirstOrDefault();
+                    comment.Place = pla;
+                    db.Comments.Add(comment);
+                    db.SaveChanges();
+
+                    return View();
+                }
+                catch (Exception)
+                {
+                    return View(comment);
+
+                }
+
+
             }
 
-            ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "PlaceName", comment.PlaceId);
             return View(comment);
         }
+
+        [HttpPost]
+        public ActionResult YorumList(int id)
+        {
+            var result = (from a in db.Places
+                          join b in db.Comments on a.PlaceId equals b.PlaceId
+                          join c in db.Users on b.UserId equals c.Id
+                          select new
+                          {
+                              b.CommentContent,
+                              b.CommentPhoto,
+                              b.CommentPoint,
+                              c.UserName
+                          }).ToList();
+            return View(result);
+
+        }
+
+
 
         // GET: Comments/Edit/5
         public ActionResult Edit(int? id)

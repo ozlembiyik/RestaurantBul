@@ -1,5 +1,5 @@
 ﻿
-@model  IEnumerable<RestaurantBul.Models.Comment>
+@model  RestaurantBul.Models.ViewModel.PlaceCommentViewModel
 
 <!-- Mirrored from demo.web3canvas.com/themeforest/listed/detail.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Mar 2019 06:46:05 GMT -->
 <head>
@@ -42,35 +42,36 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <a href="#" class="grid image-link">
-                        <img src="" class="img-fluid" alt="">
+                    <a href="" class="grid image-link">
+                        <img width="75" src="@Model.MenuPic" class="img-fluid" alt="#"/>
+                        <img src="@Url.Content(Model.MenuPic)" class="img-fluid" alt="#">
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a href="#" class="grid image-link">
-                        <img src="" class="img-fluid" alt="">
+                    <a href="" class="grid image-link">
+                        <img src="" class="img-fluid" alt="#">
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a href="#" class="grid image-link">
-                        <img src="" class="img-fluid" alt="">
+                    <a href="~/Content/tempp/Sablon/listed/images/feat_slide3.jpg" class="grid image-link">
+                        <img src="~/Content/tempp/Sablon/listed/images/feat_slide3.jpg" class="img-fluid" alt="#">
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a href="#" class="grid image-link">
-                        <img src="" class="img-fluid" alt="">
+                    <a href="~/Content/tempp/Sablon/listed/images/feat_slide4.jpg" class="grid image-link">
+                        <img src="~/Content/tempp/Sablon/listed/images/feat_slide4.jpg" class="img-fluid" alt="#">
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a href="#" class="grid image-link">
-                        <img src="" class="img-fluid" alt="">
+                    <a href="~/Content/tempp/Sablon/listed/images/feat_slide5.jpg" class="grid image-link">
+                        <img src="~/Content/tempp/Sablon/listed/images/feat_slide5.jpg" class="img-fluid" alt="#">
                     </a>
                 </div>
-
-
-
-
-
+                <div class="swiper-slide">
+                    <a href="~/Content/tempp/Sablon/listed/images/feat_slide6.jpg" class="grid image-link">
+                        <img src="~/Content/tempp/Sablon/listed/images/feat_slide6.jpg" class="img-fluid" alt="#">
+                    </a>
+                </div>
             </div>
 
             <div class="swiper-pagination swiper-pagination-white"></div>
@@ -86,7 +87,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h5>Tasty Hand-Pulled Noodles</h5>
+                    
+                    <h5>
+                      @Model.PlaceName 
+                    </h5>
                     <p>
                         <span>$$$</span>$$
                     </p>
@@ -116,16 +120,16 @@
                     <div class="booking-checkbox_wrap">
                         <div class="booking-checkbox">
                             <p>
-                                Tasty Hand-Pulled Noodles is a 1950s style diner located in Madison, Wisconsin. Opened in 1946 by Mickey Weidman, and located just across the street from Camp Randall Stadium, it has become a popular game day tradition amongst
-                                many Badger fans. The diner is well known for its breakfast selections, especially the Scrambler, which is a large mound of potatoes, eggs, cheese, gravy, and a patrons’ choice of other toppings.
+                             
                             </p>
                             <p>
-                                Mickies has also been featured on “Todd’s Taste of the Town” during one of ESPN’s college football broadcasts. We are one of the best Chinese restaurants in the New York, New York area. We have been recognized for our outstanding
-                                Chinese & Asian cuisine, excellent Chinese menu, and great restaurant specials. We are one of the best Chinese restaurants in the New York, New York area. We have been recognized for our outstanding Chinese & Asian cuisine,
-                                excellent Chinese menu, and great restaurant specials.
+                               
                             </p>
                             <hr>
                         </div>
+
+
+                        <!--EK BİLGİİİİ !!-->
                         <div class="row">
                             <div class="col-md-6 col-lg-4">
                                 <label class="custom-checkbox">
@@ -171,7 +175,7 @@
                     <div class="booking-checkbox_wrap booking-your-review">
                         <h5>Yorum Yap</h5>
                         @*@if (ViewData["uyeId"] != null)
-            {*@
+                            {*@
                         <div class="customer-review_wrap">
                             <div class="customer-img">
                                 <img src="images/avatar.jpg" class="img-fluid" alt="#">
@@ -210,8 +214,8 @@
                             </div>
                         </div>
                         @*}
-            else
-            {*@
+                            else
+                            {*@
                         <h2>Yorum yapmak için giriş yapmalısınız.</h2>
                         <p> <a href="@Url.Action("Login","Account")">Giriş Yap</a></p>
                         @*}*@
@@ -221,43 +225,42 @@
                     <div class="booking-checkbox_wrap my-4">
                         <h4>Yorumlar</h4>
                         <hr />
-                        @Html.Partial("_PartialCommentList")
+                        @Html.Action("CommentList")
                         <hr>
-
-                    </div>
-                    </div>
-
-
-                    <div class="col-md-4 responsive-wrap">
-                        <div class="contact-info">
-                            <img src="images/map.jpg" class="img-fluid" alt="#">
-                            <div class="address">
-                                <span class="icon-location-pin"></span>
-                                <p>
-                                    Doyers St
-                                    <br> New York, NY 10013
-                                    <br> b/t Division St & St James Pl
-                                    <br> Chinatown, Civic Center
-                                </p>
-                            </div>
-                            <div class="address">
-                                <span class="icon-screen-smartphone"></span>
-                                <p> +44 20 7336 8898</p>
-                            </div>
-                            <div class="address">
-                                <span class="icon-link"></span>
-                                <p>https://burgerandlobster.com</p>
-                            </div>
-                            <div class="address">
-                                <span class="icon-clock"></span>
-                                <p>Mon - Sun 09:30 am - 05:30 pm </p>
-                                <a href="#" class="featured-open">OPEN NOW</a>
-                            </div>
-                            <a href="#" class="btn btn-outline-danger btn-contact">SEND A MESSAGE</a>
-                        </div>
-
                     </div>
                 </div>
+
+
+                <div class="col-md-4 responsive-wrap">
+                    <div class="contact-info">
+                    
+                        <div class="address">
+                            <span class="icon-location-pin"></span>
+                            <p>
+                                @Model.Adress
+                                <br>@Model.City
+                                <br>@Model.County
+
+                            </p>
+                        </div>
+                        <div class="address">
+                            <span class="icon-screen-smartphone"></span>
+                            <p> @Model.Phone</p>
+                        </div>
+                        <div class="address">
+                            <span class="icon-link"></span>
+                            @*<p>https://burgerandlobster.com</p>*@
+                        </div>
+                        <div class="address">
+                            <span class="icon-clock"></span>
+                            <p>@Model.OpenTime - @Model.CloseTime </p>
+                            <a href="#" class="featured-open">Şimdi Açık</a>
+                        </div>
+                        <a href="#" class="btn btn-outline-danger btn-contact">Mesaj Gönder</a>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
 
@@ -266,17 +269,18 @@
 
 
 
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
-    <script src="js/jquery.magnific-popup.js"></script>
-
-    <script src="js/swiper.min.js"></script>
-
-  
-        
+    <script src="~/Content/tempp/Sablon/listed/js/js/jquery-3.2.1.min.js"></script>
  
+    <script src="~/Content/tempp/Sablon/listed/js/popper.min.js"></script>
+    <script src="~/Content/tempp/Sablon/listed/js/js/bootstrap.min.js"></script>
+
+    <script src="~/Content/tempp/Sablon/listed/js/js/jquery.magnific-popup.js"></script>
+
+    <script src="~/Content/tempp/Sablon/listed/js/js/swiper.min.js"></script>
+
+
+
+
 
 
     <script>

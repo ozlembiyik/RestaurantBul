@@ -27,9 +27,21 @@ namespace RestaurantBul.Controllers
             return View(db.Places.ToList());
         }
 
-        public ActionResult _PartialCommentList()
+        public ActionResult CommentList(int id)
         {
-            return PartialView("_PartialCommentList");
+            var result = (from a in db.Places
+                          join c in db.Comments on a.PlaceId equals c.PlaceId
+                          where c.CommentId==id
+                          select new PlaceCommentViewModel()
+                          {
+                              CommentContent=c.CommentContent,
+                              PlaceName=a.PlaceName,
+                              UserName=c.ApplicationUser.UserName,
+                              CategoryName=a.CategoryName,
+                              CommentPhoto=c.CommentPhoto
+                          }).ToList();
+                       
+            return View(result);
         }
 
         public ActionResult BreakfastList()
@@ -70,9 +82,27 @@ namespace RestaurantBul.Controllers
             db.SaveChanges();
             return View(result);
         }
-        public ActionResult PlaceDetails()
+        public ActionResult PlaceDetails(int id)
         {
-            return View();
+            int mekanid= db.Places.FirstOrDefault(x => x.PlaceId == id).PlaceId;
+
+            var result = (from a in db.Places
+                          join e in db.AdditionalPlaces on a.PlaceId equals e.PlaceId
+                          where a.PlaceId==id
+                          select new PlaceCommentViewModel
+                          {
+                              PlaceName=a.PlaceName,
+                             MenuPic=a.MenuPic,
+                             OpenTime=a.OpenTime,
+                             CloseTime=a.CloseTime,
+                             AvgPrice=a.AvgPrice,
+                             Adress=a.Adress,
+                             Phone=a.Phone,
+                             City=a.City,
+                             County=a.County
+                          }).ToList();
+
+            return View(result.FirstOrDefault());
         }
         //public JsonResult YorumYap(Comment yorum, int PlaceID,string yorums)
         //{

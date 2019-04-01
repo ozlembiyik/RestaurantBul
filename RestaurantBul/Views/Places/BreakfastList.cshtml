@@ -48,7 +48,7 @@
 
                                     <div class="card">
 
-                                        <a href="@Url.Action("PlaceDetails","Places")"><img class="card-img-top" src="@item.MenuPic" alt="Card image cap"></a>
+                                        <a href="@Url.Action("PlaceDetails","Places", new { id = item.PlaceId })"><img class="card-img-top" src="@item.MenuPic" alt="Card image cap"></a>
                                         <div class="card-body">
                                             <h5 class="card-title">@item.PlaceName</h5>
                                             <ul class="card-rating">

@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+@model  IEnumerable<RestaurantBul.Models.ViewModel.PlaceCommentViewModel>
+
+
+@foreach (var item in Model)
+{
+    <div class="customer-review_wrap">
+        <div class="customer-img">
+            <img src="images/customer-img1.jpg" class="img-fluid" alt="#">
+            <p>@item.UserName</p>
+            
+        </div>
+        <div class="customer-content-wrap">
+            <div class="customer-content">
+                <div class="customer-review">
+                    <h5>@item.PlaceName</h5>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span class="round-icon-blank"></span>
+                    <p> </p>
+                </div>
+                <div class="customer-rating">8.0</div>
+            </div>
+            <p class="customer-text">
+                @item.CommentContent
+            </p>
+            <ul>
+                <li>
+                    @*<img src="@Url.Content(item.MenuPic)" class="img-fluid" alt="#">*@
+                </li>
+                <li>
+                    <img src="images/review-img2.jpg" class="img-fluid" alt="#">
+                </li>
+                <li>
+                    <img src="images/review-img3.jpg" class="img-fluid" alt="#">
+                </li>
+            </ul>
+            <span>28 people marked this review as helpful</span>
+            <a href="#" class="helpful-btn">
+                <span class="icon-like"></span>Helpful
+            </a>
+        </div>
+    </div>
+    <hr />
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

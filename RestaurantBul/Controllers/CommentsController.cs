@@ -95,22 +95,22 @@ namespace RestaurantBul.Controllers
             return View(comment);
         }
 
-        [HttpPost]
-        public ActionResult YorumList(int id)
-        {
-            var result = (from a in db.Places
-                          join b in db.Comments on a.PlaceId equals b.PlaceId
-                          join c in db.Users on b.UserId equals c.Id
-                          select new
-                          {
-                              b.CommentContent,
-                              b.CommentPhoto,
-                              b.CommentPoint,
-                              c.UserName
-                          }).ToList();
-            return View(result);
+        //[HttpPost]
+        //public ActionResult YorumList(int id)
+        //{
+        //    var result = (from a in db.Places
+        //                  join b in db.Comments on a.PlaceId equals b.PlaceId
+        //                  join c in db.Users on b.UserId equals c.Id
+        //                  select new
+        //                  {
+        //                      b.CommentContent,
+        //                      b.CommentPhoto,
+        //                      b.CommentPoint,
+        //                      c.UserName
+        //                  }).ToList();
+        //    return View(result);
 
-        }
+        //}
 
 
 

@@ -200,6 +200,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Place.cs" />
     <Compile Include="Models\ViewModel\PlaceAdditionalViewModel.cs" />
+    <Compile Include="Models\ViewModel\PlaceCommentViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -374,6 +375,13 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="UpLoads\MenuPic\3565acbd-c357-4487-847e-46725af70ae0.jpg" />
+    <Content Include="UpLoads\MenuPic\48da07ad-f5b1-4ef0-b953-aa41ba8cb0e6.jpg" />
+    <Content Include="UpLoads\MenuPic\656de755-6a91-493d-aeca-ff152214d5b1.jpg" />
+    <Content Include="UpLoads\MenuPic\7a4f57af-89e7-44c4-b008-9ae1e2ba3f69.jpg" />
+    <Content Include="UpLoads\MenuPic\9333fd2e-57b9-42ec-b163-81cb32b6113d.jpg" />
+    <Content Include="UpLoads\MenuPic\a6343256-2b54-4f56-9fee-baca2863862d.jpg" />
+    <Content Include="UpLoads\MenuPic\cd3a6e2d-c73c-4ba7-94d9-e465184cda53.jpg" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
@@ -439,6 +447,7 @@
     <Content Include="Views\Home\_PartialSearch.cshtml" />
     <Content Include="Views\Places\_PartialCommentList.cshtml" />
     <Content Include="Views\Comments\YorumList.cshtml" />
+    <Content Include="Views\Places\CommentList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -448,7 +457,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="UpLoads\MenuPic\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

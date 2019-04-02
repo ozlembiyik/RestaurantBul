@@ -32,65 +32,7 @@
 
 <body>
 
-    <div class="nav-menu sticky-top">
-        <div class="bg transition">
-            <div class="container-fluid fixed">
-                <div class="row">
-                    <div class="col-md-12">
-                        <nav class="navbar navbar-expand-lg">
-                            @*<a class="navbar-brand" href="~/Content/tempp/Sablon/listed/index.html" style="color:black">Restaurant Bul</a>*@
-                            <a href="~/Home/Index" class="btn btn-outline-danger top-btn" style="background-color:blanchedalmond"><span></span>Restaurant Bul</a>
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="ti-menu"></span>
-                            </button>
-                            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                                <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="~/Content/tempp/Sablon/listed/listing.html">Restaurantlar</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Pages
-                                            <span class="ti-angle-down"></span>
-                                        </a>
-                                        <div class="dropdown-menu">
 
-                                            <a class="dropdown-item" href="~/Content/tempp/Sablon/listed/listing.html">Restaurant LİSTESİ</a>
-                                            <a class="dropdown-item" href="~/Content/tempp/Sablon/listed/detail.html">RESTAURANT DETAY-YORUM-PUAN</a>
-                                            @*<a class="dropdown-item" href="~/Content/tempp/Sablon/listed/add-listing.html">Add new Listing</a>*@
-
-
-                                            @*<a class="dropdown-item" href="~/Content/tempp/Sablon/listed/pricing.html">Pricing</a>
-                                                <a class="dropdown-item" href="~/Content/tempp/Sablon/listed/404.html">404</a>*@
-                                        </div>
-                                    </li>
-                                    <li class="nav-item active">
-                                        <a class="nav-link" href="~/Content/tempp/Sablon/listed/contact.html">İletişim</a>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            TEMPLATE KULLANACAGIZ
-                                            <span class="ti-angle-down"></span>
-                                        </a>
-                                        <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="~/Content/tempp/Sablon/listed/blog.html">Blog Listing</a>
-                                            <a class="dropdown-item" href="~/Content/tempp/Sablon/listed/blog-two.html">Blog Layout Two</a>
-                                            <a class="dropdown-item" href="~/Content/tempp/Sablon/listed/blog-detail.html">Blog Detail</a>
-                                        </div>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" data-toggle="modal" @Url.Action("Register", "Account") data-target="#exampleModal">Login</a>
-                                    </li>
-
-                                    <li><a href="~/Content/tempp/Sablon/listed/add-listing.html" class="btn btn-outline-danger top-btn"><span class="ti-plus"></span>Restaurant Ekle</a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <section class="featured-wrap">
         <div class="container-fluid container-subpage">
@@ -105,12 +47,13 @@
                                 <div class="col-md-4 card-2">
 
                                     <div class="card">
-                                        <a href="detail.html"><img class="card-img-top" src="@item.MenuPic" alt="Card image cap"></a>
+
+                                        <a href="@Url.Action("PlaceDetails","Places", new { id = item.PlaceId})"><img class="card-img-top" src="@item.MenuPic" alt="Card image cap"></a>
                                         <div class="card-body">
                                             <h5 class="card-title">@item.PlaceName</h5>
                                             <ul class="card-rating">
                                                 <li>5.0</li>
-                                                <li>3 Yorum</li>
+                                                <li><a href="@Url.Action("Index","Comments")" style=" color:tomato">Yorumlar</a></li>
                                                 <li><i class="fa fa-circle" aria-hidden="true"></i></li>
                                                 <li>@item.AvgPrice</li>
                                                 <li><i class="fa fa-circle" aria-hidden="true"></i></li>
@@ -124,11 +67,17 @@
                                                                 <path d="m462.5,75c-20.678,0-37.5,16.822-37.5,37.5v137.5c0,4.143 3.357,7.5 7.5,7.5h22.5v130c0,4.143 3.357,7.5 7.5,7.5s7.5-3.357 7.5-7.5v-305c0-4.143-3.357-7.5-7.5-7.5zm-7.5,167.5h-15v-130c0-9.778 6.27-18.119 15-21.215v151.215z" data-original="#000000" class="active-path" data-old_color="#ff6b6b" fill="#ff6b6b" />
                                                             </g>
                                                         </g>
-                                                    </svg> 
+                                                    </svg> Restaurant-Kahvaltı
                                                 </li>
                                             </ul>
                                             <p class="card-text">Ek Bilgi</p>
                                         </div>
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <a href="@Url.Action("Create","Comments",new { Id=item.PlaceId})" type="button" class="btn btn-default" style="background-color:tomato ; color:white">Yorum Yap</a>
+                                            </div>
+                                        </div>
+
                                         <div class="card-bottom">
                                             <p><i class="ti-location-pin"></i>@item.County</p>
                                             <span>@item.OpenTime - @item.CloseTime</span>
@@ -144,6 +93,7 @@
             </div>
         </div>
     </section>
+
 
 
     <script src="js/jquery-3.2.1.min.js"></script>

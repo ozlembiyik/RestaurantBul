@@ -35,6 +35,7 @@ namespace RestaurantBul.Models.ViewModel
         public string City { get; set; }
         [Display(Name = "Telefon")]
         public string Phone { get; set; }
+        public int CommentId { get; set; }
 
     }
 }

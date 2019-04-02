@@ -18,6 +18,7 @@ namespace RestaurantBul.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Comments
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var comments = db.Comments.Include(c => c.Place);
@@ -25,6 +26,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Comments/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -40,6 +42,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Comments/Create
+
         public ActionResult Create()
         {
             ViewBag.PlaceId = new SelectList(db.Places, "PlaceId", "PlaceName");
@@ -51,6 +54,7 @@ namespace RestaurantBul.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+
         public ActionResult Create([Bind(Include = "CommentId,CommentContent,CommentPhoto,CommentPoint,UserId,PlaceId")] Comment comment,int Id,HttpPostedFileBase CommentPic)
         {
 
@@ -115,6 +119,7 @@ namespace RestaurantBul.Controllers
 
 
         // GET: Comments/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -135,6 +140,7 @@ namespace RestaurantBul.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "CommentId,CommentContent,CommentPhoto,CommentPoint,UserId,PlaceId")] Comment comment)
         {
             if (ModelState.IsValid)
@@ -148,6 +154,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Comments/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -165,6 +172,7 @@ namespace RestaurantBul.Controllers
         // POST: Comments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Comment comment = db.Comments.Find(id);

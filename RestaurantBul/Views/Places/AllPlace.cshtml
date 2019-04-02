@@ -1,4 +1,5 @@
 ﻿
+
 @model List<RestaurantBul.Models.Place>
 
 <head>
@@ -38,6 +39,35 @@
         <div class="container-fluid container-subpage">
             <div class="row">
                 <div class="col-md-12 responsive-wrap">
+                    <!--Filtrelemee-->
+                    <div class="row detail-filter-wrap">
+                        <div class="col-md-4 featured-responsive">
+                            <div class="detail-filter-text">
+                                <p>34 Results For <span>Restaurant</span></p>
+                            </div>
+                        </div>
+                        <div class="col-md-8 featured-responsive">
+                            <div class="detail-filter">
+                                <p>Filter by</p>
+                                <form class="filter-dropdown">
+                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                                        <option selected>Best Match</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </form>
+                                <form class="filter-dropdown">
+                                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect1">
+                                        <option selected>Restaurants</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row detail-filter-wrap">
                         <div class="row">
 
@@ -95,7 +125,6 @@
     </section>
 
 
-
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -104,6 +133,5 @@
     <script src="https://maps.googleapis.com/maps/api/js?callback=myMap&amp;key=AIzaSyDMTUkJAmi1ahsx9uCGSgmcSmqDTBF9ygg"></script>
 
 </body>
-
 
 

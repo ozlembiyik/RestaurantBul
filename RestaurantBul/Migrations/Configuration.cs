@@ -9,7 +9,7 @@ namespace RestaurantBul.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(RestaurantBul.Models.ApplicationDbContext context)

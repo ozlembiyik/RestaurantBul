@@ -43,7 +43,7 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <a href="" class="grid image-link">
-                        <img width="75" src="@Model.MenuPic" class="img-fluid" alt="#"/>
+                        <img width="75" src="@Model.MenuPic" class="img-fluid" alt="#" />
                         <img src="@Url.Content(Model.MenuPic)" class="img-fluid" alt="#">
                     </a>
                 </div>
@@ -87,9 +87,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    
+
                     <h5>
-                      @Model.PlaceName 
+                        @Model.PlaceName
                     </h5>
                     <p>
                         <span>$$$</span>$$
@@ -111,158 +111,161 @@
             </div>
         </div>
     </section>
+  
+
+        <section class="gray-dark booking-details_wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 responsive-wrap">
+                        <div class="booking-checkbox_wrap">
+                            <div class="booking-checkbox">
+                                <p>
+
+                                </p>
+                                <p>
+
+                                </p>
+                                <hr>
+                            </div>
 
 
-    <section class="gray-dark booking-details_wrap">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 responsive-wrap">
-                    <div class="booking-checkbox_wrap">
-                        <div class="booking-checkbox">
-                            <p>
-                             
-                            </p>
-                            <p>
-                               
-                            </p>
+                            <!--EK BİLGİİİİ !!-->
+                            <div class="row">
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="custom-checkbox">
+                                        <span class="ti-check-box"></span>
+                                        <span class="custom-control-description">Bike Parking</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="custom-checkbox">
+                                        <span class="ti-check-box"></span>
+                                        <span class="custom-control-description">Wireless Internet </span>
+                                    </label>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="custom-checkbox">
+                                        <span class="ti-check-box"></span>
+                                        <span class="custom-control-description">Smoking Allowed </span>
+                                    </label>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="custom-checkbox">
+                                        <span class="ti-check-box"></span>
+                                        <span class="custom-control-description">Street Parking</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="custom-checkbox">
+                                        <span class="ti-check-box"></span>
+                                        <span class="custom-control-description">Special</span>
+                                    </label>
+                                </div>
+                                <div class="col-md-6 col-lg-4">
+                                    <label class="custom-checkbox">
+                                        <span class="ti-check-box"></span>
+                                        <span class="custom-control-description">Accepts Credit cards</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--YORUMMMM-->
+                     
+                         
+                            <div class="booking-checkbox_wrap booking-your-review">
+                                <h5>Yorum Yap</h5>
+                                @if (this.User.Identity.IsAuthenticated)
+                                {
+                                    <div class="customer-review_wrap">
+                                        <div class="customer-img">
+                                            <img src="images/avatar.jpg" class="img-fluid" alt="#">
+                                        </div>
+                                        <div class="customer-content-wrap">
+                                            <div class="your-rating-wrap">
+                                                <span>Your rating</span>
+                                                <div class="customer-review">
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span></span>
+                                                    <span class="round-icon-blank"></span>
+
+                                                </div>
+                                            </div>
+                                            <div class="your-comment-wrap">
+                                                <textarea name="#" id="yorum" typeof="text" class="your-rating-content" placeholder="Enter Your Comments">
+                </textarea>
+                                                <h6 class="your-rating-notify">En fazla 140 karakter</h6>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-4 mr-auto">
+                                                    <div class="add-photos-link mb-3 mb-md-0">
+                                                        <a href="#">
+                                                            <i class="icon-picture"></i>Add Photos
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="your-rating-btn">
+                                                        <input type="submit" class="btn-danger btn-block" value="Gönder" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                                @if (!this.User.Identity.IsAuthenticated)
+                                {
+
+                                    <p> <a href="@Url.Action("Login", "Account")">Giriş Yap</a></p>
+                                }
+                            </div>
+                     
+                        <!--YorumListesi-->
+                        <div class="booking-checkbox_wrap my-4">
+                            <h4>Yorumlar</h4>
+                            <hr />
+                            @Html.Action("CommentList")
                             <hr>
                         </div>
-
-
-                        <!--EK BİLGİİİİ !!-->
-                        <div class="row">
-                            <div class="col-md-6 col-lg-4">
-                                <label class="custom-checkbox">
-                                    <span class="ti-check-box"></span>
-                                    <span class="custom-control-description">Bike Parking</span>
-                                </label>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <label class="custom-checkbox">
-                                    <span class="ti-check-box"></span>
-                                    <span class="custom-control-description">Wireless Internet </span>
-                                </label>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <label class="custom-checkbox">
-                                    <span class="ti-check-box"></span>
-                                    <span class="custom-control-description">Smoking Allowed </span>
-                                </label>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <label class="custom-checkbox">
-                                    <span class="ti-check-box"></span>
-                                    <span class="custom-control-description">Street Parking</span>
-                                </label>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <label class="custom-checkbox">
-                                    <span class="ti-check-box"></span>
-                                    <span class="custom-control-description">Special</span>
-                                </label>
-                            </div>
-                            <div class="col-md-6 col-lg-4">
-                                <label class="custom-checkbox">
-                                    <span class="ti-check-box"></span>
-                                    <span class="custom-control-description">Accepts Credit cards</span>
-                                </label>
-                            </div>
-                        </div>
                     </div>
 
-                    <!--YORUMMMM-->
 
-                    <div class="booking-checkbox_wrap booking-your-review">
-                        <h5>Yorum Yap</h5>
-                        @*@if (ViewData["uyeId"] != null)
-                            {*@
-                        <div class="customer-review_wrap">
-                            <div class="customer-img">
-                                <img src="images/avatar.jpg" class="img-fluid" alt="#">
+                    <div class="col-md-4 responsive-wrap">
+                        <div class="contact-info">
+
+                            <div class="address">
+                                <span class="icon-location-pin"></span>
+                                <p>
+                                    @Model.Adress
+                                    <br>@Model.City
+                                    <br>@Model.County
+
+                                </p>
                             </div>
-                            <div class="customer-content-wrap">
-                                <div class="your-rating-wrap">
-                                    <span>Your rating</span>
-                                    <div class="customer-review">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span class="round-icon-blank"></span>
-
-                                    </div>
-                                </div>
-                                <div class="your-comment-wrap">
-                                    <textarea name="#" id="yorum" typeof="text" class="your-rating-content" placeholder="Enter Your Comments">
-                </textarea>
-                                    <h6 class="your-rating-notify">En fazla 140 karakter</h6>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-4 mr-auto">
-                                        <div class="add-photos-link mb-3 mb-md-0">
-                                            <a href="#">
-                                                <i class="icon-picture"></i>Add Photos
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="your-rating-btn">
-                                            <a href="#" class="btn btn-danger btn-block">Yorum Yap</a>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="address">
+                                <span class="icon-screen-smartphone"></span>
+                                <p> @Model.Phone</p>
                             </div>
+                            <div class="address">
+                                <span class="icon-link"></span>
+                                @*<p>https://burgerandlobster.com</p>*@
+                            </div>
+                            <div class="address">
+                                <span class="icon-clock"></span>
+                                <p>@Model.OpenTime - @Model.CloseTime </p>
+                                <a href="#" class="featured-open">Şimdi Açık</a>
+                            </div>
+                            <a href="#" class="btn btn-outline-danger btn-contact">Mesaj Gönder</a>
                         </div>
-                        @*}
-                            else
-                            {*@
-                        <h2>Yorum yapmak için giriş yapmalısınız.</h2>
-                        <p> <a href="@Url.Action("Login","Account")">Giriş Yap</a></p>
-                        @*}*@
+
                     </div>
-
-                    <!--YorumListesi-->
-                    <div class="booking-checkbox_wrap my-4">
-                        <h4>Yorumlar</h4>
-                        <hr />
-                        @Html.Action("CommentList")
-                        <hr>
-                    </div>
-                </div>
-
-
-                <div class="col-md-4 responsive-wrap">
-                    <div class="contact-info">
-                    
-                        <div class="address">
-                            <span class="icon-location-pin"></span>
-                            <p>
-                                @Model.Adress
-                                <br>@Model.City
-                                <br>@Model.County
-
-                            </p>
-                        </div>
-                        <div class="address">
-                            <span class="icon-screen-smartphone"></span>
-                            <p> @Model.Phone</p>
-                        </div>
-                        <div class="address">
-                            <span class="icon-link"></span>
-                            @*<p>https://burgerandlobster.com</p>*@
-                        </div>
-                        <div class="address">
-                            <span class="icon-clock"></span>
-                            <p>@Model.OpenTime - @Model.CloseTime </p>
-                            <a href="#" class="featured-open">Şimdi Açık</a>
-                        </div>
-                        <a href="#" class="btn btn-outline-danger btn-contact">Mesaj Gönder</a>
-                    </div>
-
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+
 
 
 
@@ -270,7 +273,7 @@
 
 
     <script src="~/Content/tempp/Sablon/listed/js/js/jquery-3.2.1.min.js"></script>
- 
+
     <script src="~/Content/tempp/Sablon/listed/js/popper.min.js"></script>
     <script src="~/Content/tempp/Sablon/listed/js/js/bootstrap.min.js"></script>
 

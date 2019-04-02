@@ -15,6 +15,7 @@ namespace RestaurantBul.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: AdditionalPlaces
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             var additionalPlaces = db.AdditionalPlaces.Include(a => a.Additional).Include(a => a.Place);
@@ -22,6 +23,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: AdditionalPlaces/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: AdditionalPlaces/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             ViewBag.AdditionalId = new SelectList(db.Additionals, "AdditionalId", "AdditionalId");
@@ -49,6 +52,7 @@ namespace RestaurantBul.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "Id,PlaceId,AdditionalId")] AdditionalPlace additionalPlace)
         {
             if (ModelState.IsValid)
@@ -64,6 +68,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: AdditionalPlaces/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,6 +90,7 @@ namespace RestaurantBul.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "Id,PlaceId,AdditionalId")] AdditionalPlace additionalPlace)
         {
             if (ModelState.IsValid)
@@ -99,6 +105,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: AdditionalPlaces/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -116,6 +123,7 @@ namespace RestaurantBul.Controllers
         // POST: AdditionalPlaces/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             AdditionalPlace additionalPlace = db.AdditionalPlaces.Find(id);

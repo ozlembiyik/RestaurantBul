@@ -21,6 +21,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Additionals/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +37,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Additionals/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +48,7 @@ namespace RestaurantBul.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "AdditionalId,Otopark,DenizKenari,DisMekan,İcMekan,TerasiVar,AlkolServis,Wifi,OnlineRezervasyon,Kahvalti,GelAl,HayvanDostu,SigaraAlanı,PaketServis,TatlivePasta,CanliMuzik")] Additional additional)
         {
             if (ModelState.IsValid)
@@ -59,6 +62,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Additionals/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +82,7 @@ namespace RestaurantBul.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "AdditionalId,Otopark,DenizKenari,DisMekan,İcMekan,TerasiVar,AlkolServis,Wifi,OnlineRezervasyon,Kahvalti,GelAl,HayvanDostu,SigaraAlanı,PaketServis,TatlivePasta,CanliMuzik")] Additional additional)
         {
             if (ModelState.IsValid)
@@ -90,6 +95,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Additionals/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,6 +113,7 @@ namespace RestaurantBul.Controllers
         // POST: Additionals/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Additional additional = db.Additionals.Find(id);

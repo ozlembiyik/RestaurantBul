@@ -22,16 +22,25 @@ namespace RestaurantBul.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Places
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.Places.ToList());
         }
 
-        public ActionResult CommentList(int id)
+        public ActionResult AllPlace()
+        {
+            var result = db.Places.ToList();
+            db.SaveChanges();
+            return View(result);
+
+        }
+
+        public ActionResult CommentList()
         {
             var result = (from a in db.Places
                           join c in db.Comments on a.PlaceId equals c.PlaceId
-                          where c.CommentId==id
+                
                           select new PlaceCommentViewModel()
                           {
                               CommentContent=c.CommentContent,
@@ -134,11 +143,13 @@ namespace RestaurantBul.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public ActionResult AddPlace()
         {
             return View();
         }
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public ActionResult AddPlace(PlaceAdditionalViewModel p, HttpPostedFileBase MenuPic)
         {
             Place place = new Place();
@@ -203,8 +214,9 @@ namespace RestaurantBul.Controllers
 
         }
 
-            // GET: Places/Details/5
-            public ActionResult Details(int? id)
+        // GET: Places/Details/5
+        [Authorize(Roles = "Admin")]
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -219,6 +231,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Places/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -229,6 +242,7 @@ namespace RestaurantBul.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "PlaceId,PlaceName,CategoryName,MenuPic,Phone,Adress,County,City,OpenTime,CloseTime,AvgPrice")] Place place)
         {
             if (ModelState.IsValid)
@@ -241,8 +255,9 @@ namespace RestaurantBul.Controllers
             return View(place);
         }
 
-      
+
         // GET: Places/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -262,6 +277,7 @@ namespace RestaurantBul.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "PlaceId,PlaceName,CategoryName,MenuPic,Phone,Adress,County,City,OpenTime,CloseTime,AvgPrice")] Place place)
         {
             if (ModelState.IsValid)
@@ -274,6 +290,7 @@ namespace RestaurantBul.Controllers
         }
 
         // GET: Places/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -291,6 +308,7 @@ namespace RestaurantBul.Controllers
         // POST: Places/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Place place = db.Places.Find(id);

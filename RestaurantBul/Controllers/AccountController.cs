@@ -178,8 +178,8 @@ namespace RestaurantBul.Controllers
                         rolemanager.Create(role);
                     }
 
-                    await this.UserManager.AddToRoleAsync(user.Id,"User");
-                   
+                    await this.UserManager.AddToRoleAsync(user.Id,model.UserRole);
+
 
                     //await async metotlarla çalışır.
                     //db savechanges olmadan id ye yada değere ulaşmamızı sağlar.
@@ -199,8 +199,12 @@ namespace RestaurantBul.Controllers
                     //{
                     //    var result1 = UserManager.AddToRole(user.Id, "Admin");
                     //}
-
-                    return RedirectToAction("Index", "Home", new { area = "" });
+                    if (!User.Identity.IsAuthenticated)
+                    {
+                        AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+                        return RedirectToAction("Login", "Account");
+                    }
+                    return RedirectToAction("Login", "Account", new { area = "" });
                 }
                 AddErrors(result);
 

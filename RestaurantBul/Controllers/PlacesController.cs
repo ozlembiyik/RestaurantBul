@@ -36,6 +36,26 @@ namespace RestaurantBul.Controllers
 
         }
 
+        public ActionResult PopularPlace()
+        {
+            var result = (from a in db.Places
+                          join c in db.Comments on a.PlaceId equals c.PlaceId
+                          join f in db.AdditionalPlaces on a.PlaceId equals f.PlaceId
+                          select new PlaceAdditionalViewModel()
+                          {
+                              MenuPic=a.MenuPic,
+                              PlaceName = a.PlaceName,
+                              CommentContent = c.CommentContent,
+                              CommentPoint =c.CommentPoint,
+                              AvgPrice = a.AvgPrice,
+                              County = a.County,
+                              CloseTime = a.CloseTime,
+                              OpenTime = a.OpenTime
+                          }).OrderByDescending(x=>x.CommentPoint>3).Take(3).ToList();
+            return View(result);
+
+        }
+
         public ActionResult CommentList()
         {
             var result = (from a in db.Places

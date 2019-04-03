@@ -81,6 +81,6 @@ namespace RestaurantBul.Models.ViewModel
         [Display(Name = "Fotoğraf")]
         public string CommentPhoto { get; set; }
         [Display(Name = "Puan")]
-        public string CommentPoint { get; set; }
+        public int CommentPoint { get; set; }
     }
 }

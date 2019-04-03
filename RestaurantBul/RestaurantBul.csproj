@@ -191,6 +191,10 @@
     <Compile Include="Migrations\201904021011415_ilk.Designer.cs">
       <DependentUpon>201904021011415_ilk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904030802103_fd.cs" />
+    <Compile Include="Migrations\201904030802103_fd.Designer.cs">
+      <DependentUpon>201904030802103_fd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Additional.cs" />
@@ -448,10 +452,10 @@
     <Content Include="Views\Places\PlaceDetails.cshtml" />
     <Content Include="Views\Places\SearchPlace.cshtml" />
     <Content Include="Views\Home\_PartialSearch.cshtml" />
-    <Content Include="Views\Places\_PartialCommentList.cshtml" />
     <Content Include="Views\Comments\YorumList.cshtml" />
     <Content Include="Views\Places\CommentList.cshtml" />
     <Content Include="Views\Places\AllPlace.cshtml" />
+    <Content Include="Views\Places\PopularPlace.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -478,6 +482,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904021011415_ilk.resx">
       <DependentUpon>201904021011415_ilk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904030802103_fd.resx">
+      <DependentUpon>201904030802103_fd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

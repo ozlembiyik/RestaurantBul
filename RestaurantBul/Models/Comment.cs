@@ -15,7 +15,7 @@ namespace RestaurantBul.Models
         [Display(Name = "Fotoğraf")]
         public string CommentPhoto { get; set; }
         [Display(Name = "Puan")]
-        public string CommentPoint{ get; set; }
+        public int CommentPoint{ get; set; }
 
         //bir yorum bir kullanıcıya ait
         public string UserId { get; set; }

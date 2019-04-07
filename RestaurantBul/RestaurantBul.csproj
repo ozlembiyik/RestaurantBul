@@ -187,13 +187,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\MvcHtmlHelper.cs" />
-    <Compile Include="Migrations\201904021011415_ilk.cs" />
-    <Compile Include="Migrations\201904021011415_ilk.Designer.cs">
-      <DependentUpon>201904021011415_ilk.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201904030802103_fd.cs" />
-    <Compile Include="Migrations\201904030802103_fd.Designer.cs">
-      <DependentUpon>201904030802103_fd.cs</DependentUpon>
+    <Compile Include="Migrations\201904070719006_ilk.cs" />
+    <Compile Include="Migrations\201904070719006_ilk.Designer.cs">
+      <DependentUpon>201904070719006_ilk.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -456,6 +452,7 @@
     <Content Include="Views\Places\CommentList.cshtml" />
     <Content Include="Views\Places\AllPlace.cshtml" />
     <Content Include="Views\Places\PopularPlace.cshtml" />
+    <Content Include="Views\Places\Additionals.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -480,11 +477,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904021011415_ilk.resx">
-      <DependentUpon>201904021011415_ilk.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201904030802103_fd.resx">
-      <DependentUpon>201904030802103_fd.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201904070719006_ilk.resx">
+      <DependentUpon>201904070719006_ilk.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -108,8 +108,6 @@ C:\Users\Ridvan08\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantB
 C:\Users\Ridvan08\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.dll
 C:\Users\Ridvan08\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.pdb
 C:\Users\Ridvan08\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.csprojAssemblyReference.cache
-C:\Users\Ridvan08\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.Migrations.ilk.resources
-C:\Users\Ridvan08\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.csproj.GenerateResource.cache
 C:\Users\Section1\Source\Repos\RestaurantBul5\RestaurantBul\bin\RestaurantBul.dll.config
 C:\Users\Section1\Source\Repos\RestaurantBul5\RestaurantBul\bin\RestaurantBul.dll
 C:\Users\Section1\Source\Repos\RestaurantBul5\RestaurantBul\bin\RestaurantBul.pdb
@@ -559,3 +557,5 @@ C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantB
 C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.dll
 C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.pdb
 C:\Users\Section1\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.Migrations.fd.resources
+C:\Users\Ridvan08\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.Migrations.ilk.resources
+C:\Users\Ridvan08\Source\Repos\RestaurantBul\RestaurantBul\obj\Debug\RestaurantBul.csproj.GenerateResource.cache

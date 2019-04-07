@@ -13,7 +13,7 @@ namespace RestaurantBul.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201904021011415_ilk"; }
+            get { return "201904070719006_ilk"; }
         }
         
         string IMigrationMetadata.Source

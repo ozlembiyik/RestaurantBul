@@ -36,6 +36,39 @@ namespace RestaurantBul.Controllers
 
         }
 
+        public ActionResult Additionals(int id)
+        {
+
+            var result = (from a in db.Places
+                          join b in db.AdditionalPlaces on a.PlaceId equals b.PlaceId
+                          join c in db.Additionals on b.AdditionalId equals c.AdditionalId
+                          where a.PlaceId == id
+                          select new PlaceAdditionalViewModel
+                          {
+                              AlkolServis = c.AlkolServis,
+                              CanliMuzik = c.CanliMuzik,
+                              DenizKenari = c.DenizKenari,
+                              DisMekan = c.DisMekan,
+                              GelAl = c.GelAl,
+                              HayvanDostu = c.HayvanDostu,
+                              Kahvalti = c.Kahvalti,
+                              OnlineRezervasyon = c.OnlineRezervasyon,
+                              Otopark = c.Otopark,
+                              PaketServis = c.PaketServis,
+                              SigaraAlanı = c.SigaraAlanı,
+                              TatlivePasta = c.TatlivePasta,
+                              TerasiVar = c.TerasiVar,
+                              Wifi = c.Wifi,
+                              İcMekan = c.İcMekan
+
+
+                          }).FirstOrDefault();
+
+
+            return PartialView(result);
+
+        }
+
         public ActionResult PopularPlace()
         {
             var result = (from a in db.Places
@@ -56,18 +89,20 @@ namespace RestaurantBul.Controllers
 
         }
 
-        public ActionResult CommentList()
+        public ActionResult CommentList(int id)
         {
             var result = (from a in db.Places
                           join c in db.Comments on a.PlaceId equals c.PlaceId
-                
+                          where a.PlaceId == id
                           select new PlaceCommentViewModel()
                           {
+                              PlaceId = a.PlaceId,
                               CommentContent=c.CommentContent,
                               PlaceName=a.PlaceName,
                               UserName=c.ApplicationUser.UserName,
                               CategoryName=a.CategoryName,
-                              CommentPhoto=c.CommentPhoto
+                              CommentPhoto=c.CommentPhoto,
+                               CommentPoint=c.CommentPoint,
                           }).ToList();
                        
             return View(result);

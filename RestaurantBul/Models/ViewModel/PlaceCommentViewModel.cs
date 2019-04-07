@@ -11,9 +11,11 @@ namespace RestaurantBul.Models.ViewModel
     {
         [Display(Name = "Mekan Adı")]
         public string PlaceName { get; set; }
-
+        public int PlaceId { get; set; }
         [Display(Name = "Kategori Adı")]
         public CategoryName CategoryName { get; set; }
+
+        public int CommentPoint { get; set; }
 
         [Display(Name = "Menü Fotoğrafı")]
         public string MenuPic { get; set; }

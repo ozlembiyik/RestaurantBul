@@ -118,7 +118,7 @@
                 <div class="row">
                     <div class="col-md-8 responsive-wrap">
                         <div class="booking-checkbox_wrap">
-                            <div class="booking-checkbox">
+                            @*<div class="booking-checkbox">
                                 <p>
 
                                 </p>
@@ -126,11 +126,15 @@
 
                                 </p>
                                 <hr>
-                            </div>
-
-
+                            </div>*@
+                            <h4>Özellikler</h4>
+                            <hr>
+                        @{
+                            Html.RenderAction("Additionals", "Places", new { id = Model.PlaceId });
+                        }
+                        <hr>
                             <!--EK BİLGİİİİ !!-->
-                            <div class="row">
+                            @*<div class="row">
                                 <div class="col-md-6 col-lg-4">
                                     <label class="custom-checkbox">
                                         <span class="ti-check-box"></span>
@@ -167,7 +171,7 @@
                                         <span class="custom-control-description">Accepts Credit cards</span>
                                     </label>
                                 </div>
-                            </div>
+                            </div>*@
                         </div>
 
                         <!--YORUMMMM-->
@@ -226,8 +230,8 @@
                         <div class="booking-checkbox_wrap my-4">
                             <h4>Yorumlar</h4>
                             <hr />
-                            @Html.Action("CommentList")
-                            <hr>
+                            @Html.Action("CommentList", "Places", new { id = Model.PlaceId });
+                            < hr>
                         </div>
                     </div>
 
